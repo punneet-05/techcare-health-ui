@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech.Care - Patient Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+
+
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="logo">
+          <h1>Tech.Care</h1>
+        </div>
+
+        <nav class="main-nav">
+          <div class="nav-item active">
+            <img
+              src="Icons/group_FILL0_wght300_GRAD0_opsz24.svg"
+              alt="Patients"
+              class="nav-icon"
+            />
+            <span>Patients</span>
+          </div>
+          <div class="nav-item">
+            <img
+              src="Icons/chat_bubble_FILL0_wght300_GRAD0_opsz24.svg"
+              alt="Messages"
+              class="nav-icon"
+            />
+            <span>Messages</span>
+          </div>
+          <div class="nav-item">
+            <img
+              src="Icons/credit_card_FILL0_wght300_GRAD0_opsz24.svg"
+              alt="Billing"
+              class="nav-icon"
+            />
+            <span>Billing</span>
+          </div>
+          <div class="nav-item">
+            <img
+              src="Icons/home_FILL0_wght300_GRAD0_opsz24.svg"
+              alt="Dashboard"
+              class="nav-icon"
+            />
+            <span>Dashboard</span>
+          </div>
+        </nav>
+
+        <div class="patients-section">
+          <h3>Patients</h3>
+          <div class="patients-list">
+            <div class="patient-list-item">
+              <div class="patient-avatar">EW</div>
+              <div class="patient-info">
+                <div class="name">Early Williams</div>
+                <div class="details">Female, 15</div>
+              </div>
+            </div>
+            <div class="patient-list-item">
+              <div class="patient-avatar">RA</div>
+              <div class="patient-info">
+                <div class="name">Ryan Anderson</div>
+                <div class="details">Male, 45</div>
+              </div>
+            </div>
+            <div class="patient-list-item">
+              <div class="patient-avatar">BM</div>
+              <div class="patient-info">
+                <div class="name">Bowden Michael</div>
+                <div class="details">Male, 26</div>
+              </div>
+            </div>
+            <div class="patient-list-item active">
+              <div class="patient-avatar">JT</div>
+              <div class="patient-info">
+                <div class="name">Jessica Taylor</div>
+                <div class="details">Female, 28</div>
+              </div>
+            
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+          <div class="search-container">
+            <img
+              src="Icons/search_FILL0_wght300_GRAD0_opsz24.svg"
+              alt="Search"
+              class="search-icon"
+            />
+            <input type="text" placeholder="Search" class="search-input" />
+          </div>
+          <div class="header-actions">
+            <button class="icon-btn">
+              <img
+                src="Icons/download_FILL0_wght300_GRAD0_opsz24 (1).svg"
+                alt="Download"
+                class="icon"
+              />
+            </button>
+            <button class="icon-btn">
+              <img
+                src="Icons/more_vert_FILL0_wght300_GRAD0_opsz24.svg"
+                alt="More"
+                class="icon"
+              />
+            </button>
+          </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+          <!-- Left Column -->
+          <div class="left-column">
+            <!-- Patient Profile Card -->
+            <div class="profile-card">
+              <div class="profile-header">
+                <img
+                  id="patient-photo"
+                  src=""
+                  alt="Jessica Taylor"
+                  class="profile-img"
+                />
+                <div class="profile-details">
+                  <h2 id="patient-name">Jessica Taylor</h2>
+                  <div class="patient-basic-info">
+                    <div class="info-item">
+                      <img
+                        src="Icons/FemaleIcon.svg"
+                        alt="Gender"
+                        class="info-icon"
+                      />
+                      <span id="patient-age-gender">28 years, Female</span>
+                    </div>
+                    <div class="info-item">
+                      <img
+                        src="Icons/BirthIcon.svg"
+                        alt="Birth"
+                        class="info-icon"
+                      />
+                      <span id="patient-dob">DOB: August 23, 1996</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-info">
+                <div class="contact-item">
+                  <img
+                    src="Icons/PhoneIcon.svg"
+                    alt="Phone"
+                    class="contact-icon"
+                  />
+                  <div class="contact-details">
+                    <span class="label">Phone Number</span>
+                    <span id="patient-phone">(415) 555-1234</span>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <img
+                    src="Icons/PhoneIcon.svg"
+                    alt="Emergency"
+                    class="contact-icon"
+                  />
+                  <div class="contact-details">
+                    <span class="label">Emergency Contact</span>
+                    <span id="emergency-contact">(415) 555-5678</span>
+                  </div>
+                </div>
+                <div class="contact-item">
+                  <img
+                    src="Icons/InsuranceIcon.svg"
+                    alt="Insurance"
+                    class="contact-icon"
+                  />
+                  <div class="contact-details">
+                    <span class="label">Insurance Provider</span>
+                    <span id="insurance-type">Sunrise Health Assurance</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Diagnosis History -->
+            <div class="diagnosis-history-card">
+              <div class="card-header">
+                <h3>Diagnosis History</h3>
+              </div>
+              <div id="diagnosis-history-content">
+                <!-- Will be populated by JavaScript -->
+              </div>
+            </div>
+
+            <!-- Lab Results -->
+            <div class="lab-results-card">
+              <div class="card-header">
+                <h3>Lab Results</h3>
+              </div>
+              <div id="lab-results-content">
+                <!-- Will be populated by JavaScript -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column -->
+          <div class="right-column">
+            <!-- Health Stats -->
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <img src="Icons/HeartBPM.svg" alt="Blood Pressure" />
+                </div>
+                <div class="stat-content">
+                  <h4>Blood Pressure</h4>
+                  <div class="stat-value" id="blood-pressure-value">-</div>
+                  <div class="stat-details">
+                    <div class="bp-reading">
+                      <span class="bp-type">Systolic</span>
+                      <span class="bp-value" id="systolic-value">-</span>
+                      <span class="bp-level" id="systolic-level">-</span>
+                    </div>
+                    <div class="bp-reading">
+                      <span class="bp-type">Diastolic</span>
+                      <span class="bp-value" id="diastolic-value">-</span>
+                      <span class="bp-level" id="diastolic-level">-</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <img src="Icons/HeartBPM.svg" alt="Heart Rate" />
+                </div>
+                <div class="stat-content">
+                  <h4>Heart Rate</h4>
+                  <div class="stat-value" id="heart-rate-value">-</div>
+                  <div class="stat-level" id="heart-rate-level">-</div>
+                </div>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <img
+                    src="Icons/respiratory rate.svg"
+                    alt="Respiratory Rate"
+                  />
+                </div>
+                <div class="stat-content">
+                  <h4>Respiratory Rate</h4>
+                  <div class="stat-value" id="respiratory-rate-value">-</div>
+                  <div class="stat-level" id="respiratory-rate-level">-</div>
+                </div>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-icon">
+                  <img src="Icons/temperature.svg" alt="Temperature" />
+                </div>
+                <div class="stat-content">
+                  <h4>Temperature</h4>
+                  <div class="stat-value" id="temperature-value">-</div>
+                  <div class="stat-level" id="temperature-level">-</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Blood Pressure Chart -->
+            <div class="chart-card">
+              <div class="card-header">
+                <h3>Blood Pressure Over Time</h3>
+              </div>
+              <div class="chart-container">
+                <canvas id="bloodPressureChart"></canvas>
+              </div>
+            </div>
+
+            <div class="diagnostic-list-card">
+              <div class="card-header">
+                <h3>Diagnostic List</h3>
+              </div>
+              <div id="diagnostic-list-content"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
